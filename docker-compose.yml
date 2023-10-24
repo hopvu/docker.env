@@ -12,10 +12,15 @@ services:
       - ./config:/etc/odoo
       - ./custom-addons:/mnt/extra-addons
   psql:
-    image: postgres:15
+    image: postgres
     env_file: myenvfile.env
     volumes:
       - db:/var/lib/postgresql/data/pgdata
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8118:8080
 volumes:
   data:
   db:
