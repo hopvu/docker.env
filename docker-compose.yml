@@ -12,10 +12,10 @@ services:
       - ./config:/etc/odoo
       - ./custom-addons:/mnt/extra-addons
   psql:
-    image: postgres:13
+    image: postgres:15
     env_file: myenvfile.env
     volumes:
-      - db:/var/lib/pgsql/data/pgdata
+      - db:/var/lib/postgresql/data/pgdata
 volumes:
   data:
   db:
